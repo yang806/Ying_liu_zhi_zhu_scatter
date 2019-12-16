@@ -20,6 +20,7 @@ clc
 
 path = '.\result\';%注意文件夹路径的选取，注意该文件夹下需要大量图片，以方便做成动画效果
 dir1 = dir([path '*.bmp']);
+figure('color','w');
 for i = 1:length(dir1)
     disp(i);
     img = imread([path dir1(i).name]);
@@ -33,5 +34,6 @@ for i = 1:length(dir1)
     [m,n] = size(img);
     axis([0 n -m 0]); 
     axis equal
+    axis off
     pause(0.02);
 end
